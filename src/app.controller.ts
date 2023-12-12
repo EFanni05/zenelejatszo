@@ -1,6 +1,6 @@
 import { Controller, Get, Render } from '@nestjs/common';
-import * as mysql from 'mysql2';
 import { AppService } from './app.service';
+import * as mysql from 'mysql2';
 
 const conn = mysql.createPool({
   host: 'localhost',
@@ -11,11 +11,18 @@ const conn = mysql.createPool({
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
   @Render('index')
   index() {
-    return { message: 'Welcome to the homepage' };
+    return { title: 'Music player' }
+  }
+
+  @Get('/list')
+  @Render('list')
+  async list() {
+    const [adatok, mezok] = await conn.execute('SELECT title, artist FROM songs')
+    return { songs: adatok };
   }
 }
