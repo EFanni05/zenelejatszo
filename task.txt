@@ -1,0 +1,11 @@
+Hozz létre egy adatbázist, amelyben egy online zene streaming szolgáltatás zeneszámait lehet eltárolni.
+title (a szám címe)
+artist (előadó)
+length (a hossz másodpercben)
+Készíts egy NestJS-es alkalmazást, használd a keretet:
+https://github.com/hgabor/nestjs-keret-2023/
+
+A főoldalon listázd az összes elérhető számot, szerző, azon belül cím sorrendben.
+Készíts egy hozzáadás oldalt (form, validáció stb.)
+
+Próbáld meg megoldani a zeneszám törlését és az adatok módosítását!

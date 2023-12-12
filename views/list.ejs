@@ -2,15 +2,18 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title><%= message %></title>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <h1><%= message %></h1>
-    <button>Add</button>
-    <button>Edit</button>
-    <a href="/list"><button>List</button></a>
+    <ul>
+        <% sons.forEach(song => { %>
+        <li><%=song.title%> <i><%= song.artist %></i></li>
+        <% }); %>
+    </ul>
+    <a href="/index"></a>
 </body>
 </html>
